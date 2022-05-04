@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/favicon-32x32.png">
+  <title>Frontend Mentor | Memory game</title>
+  <script src="https://kit.fontawesome.com/8b42b9e15d.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="./styles/main.css"></link>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@700&display=swap" rel="stylesheet">
+  <body>
+  <div class="setup">
+    <div class="settings">
+      <div class="textbox">
+        <h1>memory</h1>
+      </div>
+      <div class="container--settings">
+          <div class="container--settings-content-holder">
+            <div class="settings-row">
+              <h2>Select Theme</h2>
+              <button class="selected--option">Numbers</button>
+              <button>Icons</button>
+            </div>
+            <div class="settings-row">
+              <h2>Numbers of players</h2>
+              <button class="selected--option">1</button>
+              <button>2</button>
+              <button>3</button>
+              <button>4</button>
+            </div>
+            <div class="settings-row">
+              <h2>Grid size</h2>
+              <button class="selected--option">4x4</button>
+              <button>6x6</button>
+            </div>
+            <button id="settings--start-button">Start game</button>
+          </div>
+      </div>
+    </div>
+  </div>
+  <div class="game--container">
+        <div class="top--bar">
+          <h1>memory</h1>
+          <div class="top--bar-buttons">
+            <button class="restart--button">Restart</button>
+            <button class="newgame--button">New game</button>
+          </div>
+      </div>
+      <div class="planche--container">
+        <div class="planche6x6">
+          <div class="row">
+            <div class="col"><div class="circle"><h1></h1></div></div>
+            <div class="col"><div class="circle"><h1></h1></div></div>
+            <div class="col"><div class="circle"><h1></h1></div></div>
+            <div class="col"><div class="circle"><h1></h1></div></div>
+            <div class="col"><div class="circle"><h1></h1></div></div>
+            <div class="col"><div class="circle"><h1></h1></div></div>
+          </div>
+          <div class="row">
+            <div class="col"><div class="circle"><h1></h1></div></div>
+            <div class="col"><div class="circle"><h1></h1></div></div>
+            <div class="col"><div class="circle"><h1></h1></div></div>
+            <div class="col"><div class="circle"><h1></h1></div></div>
+            <div class="col"><div class="circle"><h1></h1></div></div>
+            <div class="col"><div class="circle"><h1></h1></div></div>
+          </div>
+          <div class="row">
+            <div class="col"><div class="circle"><h1></h1></div></div>
+            <div class="col"><div class="circle"><h1></h1></div></div>
+            <div class="col"><div class="circle"><h1></h1></div></div>
+            <div class="col"><div class="circle"><h1></h1></div></div>
+            <div class="col"><div class="circle"><h1></h1></div></div>
+            <div class="col"><div class="circle"><h1></h1></div></div>
+          </div>
+          <div class="row">
+            <div class="col"><div class="circle"><h1></h1></div></div>
+            <div class="col"><div class="circle"><h1></h1></div></div>
+            <div class="col"><div class="circle"><h1></h1></div></div>
+            <div class="col"><div class="circle"><h1></h1></div></div>
+            <div class="col"><div class="circle"><h1></h1></div></div>
+            <div class="col"><div class="circle"><h1></h1></div></div>
+          </div>
+          <div class="row">
+            <div class="col"><div class="circle"><h1></h1></div></div>
+            <div class="col"><div class="circle"><h1></h1></div></div>
+            <div class="col"><div class="circle"><h1></h1></div></div>
+            <div class="col"><div class="circle"><h1></h1></div></div>
+            <div class="col"><div class="circle"><h1></h1></div></div>
+            <div class="col"><div class="circle"><h1></h1></div></div>
+          </div>
+          <div class="row">
+            <div class="col"><div class="circle"><h1></h1></div></div>
+            <div class="col"><div class="circle"><h1></h1></div></div>
+            <div class="col"><div class="circle"><h1></h1></div></div>
+            <div class="col"><div class="circle"><h1></h1></div></div>
+            <div class="col"><div class="circle"><h1></h1></div></div>
+            <div class="col"><div class="circle"><h1></h1></div></div>
+          </div>
+        </div>
+        <div class="planche4x4">
+          <div class="row">
+            <div class="col"><div class="circle"><h1></h1></div></div>
+            <div class="col"><div class="circle"><h1></h1></div></div>
+            <div class="col"><div class="circle"><h1></h1></div></div>
+            <div class="col"><div class="circle"><h1></h1></div></div>
+          </div>
+          <div class="row">
+            <div class="col"><div class="circle"><h1></h1></div></div>
+            <div class="col"><div class="circle"><h1></h1></div></div>
+            <div class="col"><div class="circle"><h1></h1></div></div>
+            <div class="col"><div class="circle"><h1></h1></div></div>
+          </div>
+          <div class="row">
+            <div class="col"><div class="circle"><h1></h1></div></div>
+            <div class="col"><div class="circle"><h1></h1></div></div>
+            <div class="col"><div class="circle"><h1></h1></div></div>
+            <div class="col"><div class="circle"><h1></h1></div></div>
+          </div>
+          <div class="row">
+            <div class="col"><div class="circle"><h1></h1></div></div>
+            <div class="col"><div class="circle"><h1></h1></div></div>
+            <div class="col"><div class="circle"><h1></h1></div></div>
+            <div class="col"><div class="circle"><h1></h1></div></div>
+          </div>
+        </div>
+      </div>
+      <div class="bottom--bar--singleplayer">
+        <div class="bottom--bar--singleplayer-box">
+          <div class="text--line">
+            <div></div>
+            <h1>Time</h1>
+            <h1 id="stoper">0</h1>
+          </div>
+        </div>
+        <div class="bottom--bar--singleplayer-box">
+          <div class="text--line">
+            <div></div>
+            <h1>Moves</h1>
+            <h1 id="singleplayer--moves--counter">0</h1>
+          </div>
+        </div>
+      </div>
+      <div class="bottom--bar-multiplayer">
+        <div class="player--box">
+          <h1>Player 1</h1>
+          <h1 class="points--counter">0</h1>
+        </div>
+        <div class="player--box">
+          <h1>Player 2</h1>
+          <h1 class="points--counter">0</h1>
+        </div>
+        <div class="player--box">
+          <h1>Player 3</h1>
+          <h1 class="points--counter">0</h1>
+        </div>
+        <div class="player--box">
+          <h1>Player 4</h1>
+          <h1 class="points--counter">0</h1>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="container--results-singleplayer">
+    <div class="results">
+      <div class="results--text">
+        <h1>You did it!</h1>
+        <p>Game over! Here's how you get on</p>
+      </div>
+      <div class="results--box">
+        <div class="results--box-row">
+          <h1>Time elapsed </h1><h1> <span id="time"> </span>s</h1>
+        </div>
+      </div>
+      <div class="results--box">
+        <div class="results--box-row">
+          <h1>Moves Taken </h1><h1><span id="moves"> </span></h1>
+        </div>
+      </div>
+      <div>
+        <button class="restart--button">Restart</button>
+        <button class="newgame--button">Setup New Game</button>
+      </div>
+    </div>
+  </div>
+  <div class="container--results-multiplayer">
+    <div class="results">
+        <div class="results--text">
+          <h1><span></span></h1>
+          <p>Game over! Here are the results</p>
+        </div>
+        <div class="results--box">
+          <div class="results--box-row">
+            <h1></h1><h1> <span> </span></h1>
+          </div>
+        </div>
+        <div class="results--box">
+          <div class="results--box-row">
+            <h1></h1><h1><span> </span></h1>
+          </div>
+        </div>
+        <div class="results--box">
+          <div class="results--box-row">
+            <h1></h1><h1><span> </span></h1>
+          </div>
+        </div>
+        <div class="results--box">
+          <div class="results--box-row">
+            <h1></h1><h1><span> </span></h1>
+          </div>
+        </div>
+        <div>
+          <button class="restart--button">Restart</button>
+          <button class="newgame--button">Setup New Game</button>
+        </div>
+      </div>
+    </div>
+<script src="script.js"></script>
+</body>
+</html>

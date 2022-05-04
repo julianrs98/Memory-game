@@ -1,0 +1,29 @@
+@mixin buttoGene($color, $width: none, $height: none) {
+    border-radius: 26px;
+    border: none;
+    background-color: $color;
+    width: $width;
+    height: $height;
+    color: white;
+    font-weight: bold;
+    @content;
+};
+
+
+$breakpoint-up: (
+    "tablets": 481px,
+    "largetablets": 580px,
+    "smallscreens": 769px,
+    "smalldesktops": 1025px,
+    "largedesktops": 1355px
+);
+
+
+@mixin breakpointup($width) {
+    @media screen and (min-width: map-get($breakpoint-up, $width)) {
+        @content
+    }
+};
+
+
+

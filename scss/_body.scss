@@ -1,0 +1,536 @@
+// planche colors
+
+
+.setup {
+    background-color: map-get($colors, 'navy');
+    height: 100%;
+    width: 100%;
+    display: block; //block
+    .textbox {
+        display: flex;
+        align-items: flex-end;
+        justify-content: center;
+        height: 30%;
+        margin-bottom: 5%;
+    h1 {
+        text-align: center;
+        font-size: 2rem;
+        height: 35%;
+        }
+    }
+}
+
+.settings {
+    height: 100%;
+}
+
+.container--settings {
+    margin: 0 auto;
+    width: 85%;
+    height: 50%;
+    background-color: map-get($colors, 'whitegrey');
+    height: 55%;
+    border-radius: $containers-radius;
+    display:  flex;
+    align-items: center;
+        .container--settings-content-holder {
+            width: 80%;
+            height: 75%;
+            margin: 0 auto;
+            color: #7191A5;
+        .settings-row {
+            height: 30%;
+            width: 100%;
+            h2 {
+                margin-bottom: 4%;
+            }
+            .selected--option {
+                background-color: #6395B8;
+            }
+        }
+        div:nth-child(1)  button, div:nth-child(3)  button {
+                @include buttoGene(#BCCED9 ,45%, 30%);
+                + button {
+                    float: right;
+                }
+        }
+        div:nth-child(2) {
+                button {
+                @include buttoGene(#BCCED9, 19%, 30%);
+            }
+                button:not(button:last-child) {
+                    margin-right: 5%;
+                }
+        }
+        button:last-child {
+            @include buttoGene(#FDA214 ,100%, 8.5%);
+        }
+    }
+    @include breakpointup('tablets') {
+        width: 65%;
+    }
+    @include breakpointup('smalldesktops') {
+        width: 49%;
+    }
+    @include breakpointup('largedesktops') {
+        width: 38%;
+    }
+}
+
+
+
+
+
+
+
+.game--container {
+    margin: 0 auto;
+    width: 94%;
+    height: 90vh;
+    padding-top: 2%;
+    display: none;
+    position: relative;
+    background-color:rgba(255,255,255,0.5);
+    .top--bar {
+        height: 16%;
+        display: flex;
+        justify-content: space-between;
+        color: black;
+        h1 {
+            margin-top: 8px;
+            font-size: 1.5rem;
+            @include breakpointup ('smalldesktops') {
+                font-size: 1.875rem;
+            }
+            @include breakpointup ('largedesktops') {
+                font-size: 2.3rem;
+            }
+        }
+    }
+    .top--bar-buttons {
+        button:first-child {
+            margin-right: 5px;
+        }
+        button {
+            padding: 0.5em 0.5em;
+            display: inline;
+            font-size: 15px;
+            @include buttoGene(#FDA214);
+            @include breakpointup('tablets') {
+                padding: 1em 1em;
+            }
+            @include breakpointup('smalldesktops') {
+                font-size: 20px;
+                border-radius: 31px;
+            }
+        }
+    }
+}
+
+.planche--container {
+    width: 91%;
+    height: 65%;
+    margin: 0 auto;
+    background-color: white;
+    display: flex;
+    align-items: center;
+    .planche6x6, .planche4x4 {
+        width: 91%;
+        height: 100%;
+        margin: 0 auto;
+        display: none;
+        .guessed {
+            background-color: #BCCED9;
+            pointer-events: none;
+            h1 {
+                opacity: 1;
+            }
+        }
+        .active, .active-hitten {
+            background-color: #FDA214;
+            pointer-events: none;
+            h1 {
+                opacity: 1;
+            }
+        }
+        .hidden {
+            background-color: #304859;
+            h1{
+                opacity: 0;
+            }
+        }
+    }
+    .planche6x6 {
+        .circle {
+            width: 12vw;
+            height: 12vw;
+            h1 {
+                font-size: 25px;
+            }
+        }
+        @include breakpointup('tablets') {
+        .circle {
+            width: 11vw;
+            height: 11vw;
+            }
+        }
+        @include breakpointup('largetablets') {
+            .row {
+                height: 17.666667%;
+            }
+            .circle {
+                width: 10vw;
+                height: 10vw;
+                }
+            }
+        @include breakpointup('smallscreens') {
+            width: 63%;
+            .row {
+                height: 15.666667%;
+            }
+            .circle {
+                width: 7vw;
+                height: 7vw;
+            }
+        }
+        @include breakpointup('smalldesktops') {
+            width: 50%;
+            .circle {
+                width: 6vw;
+                height: 6vw;
+            }
+        }
+        @include breakpointup('largedesktops') {
+            width: 40%;
+            .circle {
+                width: 4vw;
+                height: 4vw;
+            }
+        }
+    }
+    .planche4x4 {
+            height: 50vh;
+            width: 80vw;
+            display: none; 
+            .circle {
+                width: 13vw;
+                height: 13vw;
+            }
+            .row {
+                margin: 0 auto;
+                width: 100%;
+                height: 27%;
+            .col {
+                width: 24.66%;
+            }
+        }
+        @include breakpointup(tablets) {
+            height: 45vh;
+            width: 70vw;
+            .circle {
+                width: 11vw;
+                height: 11vw;
+            }
+        }
+        @include breakpointup(smallscreens) {
+            width: 55vw;
+            .circle {
+                width: 10vw;
+                height: 10vw;
+            }
+        }
+        @include breakpointup(smalldesktops) {
+            .circle {
+                width: 8vh;
+                height: 8vh;
+            }
+            width: 50vw;
+            height: 36vh;
+        }
+        @include breakpointup(largedesktops) {
+            width: 35%;
+            height: 63%;
+            .circle {
+                width: 8vh;
+                height: 8vh;
+            }
+        }
+    }
+}
+
+
+
+.bottom--bar-multiplayer {
+    height: 18%;
+    width: 100%;
+    display: none; 
+    justify-content: space-around;
+    align-items: flex-end;
+    > div {
+        width: 23%;
+        height: 45%;
+        background-color: map-get($colors, 'lightgrey');
+        border-radius: 10px;
+        display: none; 
+        h1:first-child {
+            margin-top: 10%;
+            font-size: 0.7rem;
+        }
+        h1 {
+            width: 80%;
+            margin: 0 auto;
+            color:  map-get($colors, 'greyblue');
+            margin-bottom: 5%;
+        }
+        @include breakpointup('smallscreens') {
+            width: 16%;
+            height: 45%;
+        }
+        @include breakpointup('smalldesktops') {
+            height: 55%;
+        }
+        @include breakpointup('largedesktops') {
+            width: 12%;
+            height: 47%;
+        }
+    &:first-child {
+        background-color: #FDA214;
+    }
+    }
+}
+
+.bottom--bar--singleplayer {
+    width: 80%;
+    height: 17%;
+    margin: 0 auto;
+    display: none; //none
+    justify-content: space-around;
+    align-items: flex-end;
+    &-box {
+        color:  map-get($colors, 'greyblue');
+        width: 45%;
+        height: 52%;
+        background-color: map-get($colors, 'lightgrey');
+        border-radius: 10px;
+        @include breakpointup('smalldesktops') {
+            width: 25%;
+        }
+    }
+    .text--line {
+        width: 80%;
+        height: 100%;
+        margin: 0 auto;
+        div {
+            height: 35%;
+        }
+        h1 {
+            display: inline-block;
+            height: 65%;
+        }
+        h1:last-child {
+            float: right;
+            color:  map-get($colors, 'navyblue');
+        }
+    }
+}
+
+
+
+.row {
+    width: 100%;
+    height: 18.666667%;
+}
+
+.col {
+    float: left;
+    height: 100%;
+    width: 16.66%;
+    .circle {
+        background-color: map-get($colors, 'navyblue');
+        margin: 0 auto;
+        border-radius: 50px;
+    }
+    h1 {
+        width: 100%;
+        height: 100%;
+        margin: 0 auto;
+        padding-top: 34%;
+        text-align: center;
+        font-size: 30px;
+        opacity: 0;
+    }
+}
+
+//results box
+
+.container--results-multiplayer {
+    width: 80%;
+    height: 75%;
+    margin: 0 auto;
+    background-color: #F2F2F2;
+    border-radius: 20px;
+    margin-top: 15%;
+    display: none; //none
+    z-index: 0;
+    top: 0%;
+    right: 10%;
+    @include breakpointup('smalldesktops') {
+        width: 60%;
+        height: 65%;
+    }
+    @include breakpointup('largedesktops') {
+        width: 47%;
+        height: 50%;
+        top: -2%;
+    }
+  }
+
+
+
+.results {
+    margin: 0 auto;
+    width: 90%;
+    height: 100%;
+    &--text {
+        height: 24%;
+        padding-top: 8%;
+        text-align: center;
+        color: black;
+        h1 {
+            font-size: 2.5rem;
+            padding-bottom: 10px;
+        }
+    }
+    &--box {
+        height: 13.5%;
+        background-color: #DFE7EC;
+        display: none;
+        align-items: center;
+        margin-bottom: 14px;
+        border-radius: 10px;
+        > .results--box-row {
+            margin: 0 auto;
+            width: 90%;
+            height: 30%;
+            display: flex;
+            justify-content: space-between;
+            > h1 {
+             height: 100%;
+             color: #7191A5;
+             & + h1 {
+                display: inline-block;
+                height: 100%;
+                font-size: 20px;
+                color: #304859;
+             }
+            }
+            div {
+
+                span {
+                    display: block;
+                }
+            }
+        }
+
+    }
+    div:nth-child(6) {
+        height: 17%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        button {
+            display: inline-block;
+            @include buttoGene(#FDA214, 48%, 50%);
+            &:last-child {
+                float: right;
+            }
+        }
+    }
+}
+
+
+.container--results-singleplayer {
+    width: 80%;
+    height: 60%;
+    margin: 0 auto;
+    background-color: #F2F2F2;
+    border-radius: 20px;
+    margin-top: 15%;
+    display: none;
+    z-index: 1;
+    top: 0%;
+    right: 10%;
+    .results--text {
+        margin-bottom: 9%;
+    }
+    .results--box {
+        height: 21%;
+        background-color: #DFE7EC;
+        display: flex;
+        align-items: center;
+        margin-bottom: 14px;
+        border-radius: 10px;
+        > .results--box-row {
+            margin: 0 auto;
+            width: 90%;
+            height: 30%;
+            display: flex;
+            justify-content: space-between;
+            > h1 {
+             height: 100%;
+             color: #7191A5;
+             & + h1 {
+                display: inline-block;
+                height: 100%;
+                font-size: 20px;
+                color: #304859;
+             }
+            }
+            div {
+
+                span {
+                    display: block;
+                }
+            }
+        }
+
+    }
+    .results {
+        div:last-child {
+            height: 17%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            button {
+                display: inline-block;
+                @include buttoGene(#FDA214, 48%, 65%);
+                &:last-child {
+                    float: right;
+                }
+            }
+        }
+    }
+    @include breakpointup('smalldesktops') {
+        width: 60%;
+        height: 65%;
+        left: 19%;
+    }
+    @include breakpointup('largedesktops') {
+        width: 47%;
+        height: 50%;
+        top: -2%;
+    }
+}
+
+
+.hide-behind {
+    opacity: 0.5;
+    z-index: -1;
+}
+
+.show-ontop {
+    position: absolute;
+    display: block;
+    left: 10%;
+}
+
